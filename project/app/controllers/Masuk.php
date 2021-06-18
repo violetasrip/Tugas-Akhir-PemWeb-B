@@ -7,13 +7,13 @@ class Masuk extends Controller{
     public function index(){
         $this->view('masuk/index');
         
-        $data['user'] = $this->model('User_model')->getUser($email_user);
 
         if(isset($_COOKIE['cookie_email'])){
             $cookie_email = $_COOKIE['cookie_email'];
             $cookie_password = $_COOKIE['cookie_password'];
             $email_user = $cookie_email;
             $psw = $cookie_password;
+            $data['user'] = $this->model('User_model')->getUser($_COOKIE['cookie_email']);
             if($data['user']['password'] == $cookie_password){
                 $_SESSION['session_email'] = $cookie_email;
                 $_SESSION['session_password'] = $cookie_password;
