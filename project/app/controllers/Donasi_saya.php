@@ -3,19 +3,13 @@
 class Donasi_saya extends Controller{
 
     public function index(){
-        $this->view('Donasi_saya/index');
+        if(isset($_SESSION['session_email'])){
+            $data['donasi_saya'] = $this->model('Donasi_model')->getDonasi($_SESSION['session_email']);
+            $data['penerima_donasi'] = [];
+            foreach($data['donasi_saya'] as $donasi){
+                array_push( $data['penerima_donasi'], $this->model('Penerima_donasi_model')->getPenerima_donasi_id($donasi['id_person']) );
+            }
+            $this->view('Donasi_saya/index', $data);
+        }
     }
-
-    // public function add_donasi($id){
-    //     if($this->model('User_model')->getPassUserId($id) == $_POST['password']){
-    //         if($this->model('Donasi_model')->add_donasi($_POST) > 0){
-    //             $this->model('Penerima_donasi_model')->updateStatusId($id)
-    //             header('Location: ' . BASEURL . '/Donasi_saya');
-    //             exit;
-    //         }
-    //     }
-    //     echo "<script>alert('Password yang anda masukkan tidak sesuai!');</script>";
-    //     header('Location: ' . BASEURL . '/Form_donasi/index'.$id);
-    //     exit;
-    // }
 }

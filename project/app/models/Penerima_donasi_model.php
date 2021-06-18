@@ -22,8 +22,9 @@ class Penerima_donasi_model {
     public function updateStatusId($id){
         $value = 'Telah Menerima Donasi';
         $query = 'UPDATE daftar_donasi SET status=:value WHERE id_person=:id';
+        $this->db->query($query);
         $this->db->bind('value',$value);
         $this->db->bind('id',$id);
-        $this->db->query($query);
+        $this->db->execute($query);
     }
 }

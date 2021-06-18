@@ -22,28 +22,32 @@
           <div class="col-md-7">
             <div class="card-body" style="margin-top: 0%;margin-bottom: 0%;">
               <p class="login-card-description">Daftar Sekarang!</p>
-              <form action="#!">
+              <form action="<?= BASEURL; ?>/Masuk/daftar" method="POST">
                   <div class="form-group">
                     <label for="nama" class="sr-only">Nama Perusahaan</label>
-                    <input class="form-control" placeholder="Nama Perusahaan">
+                    <input class="form-control" name="nama_p" id="nama_p" placeholder="Nama Perusahaan">
                   </div>
                   <div class="form-group">
                     <label for="alamat" class="sr-only">Alamat</label>
-                    <input class="form-control" placeholder="Alamat Perusahaan">
+                    <input class="form-control" name="alamat" id="alamat" placeholder="Alamat Perusahaan">
                   </div>
                   <div class="form-group">
-                    <label for="nomor" class="sr-only">Nomor</label>
-                    <input class="form-control" placeholder="0356-******">
+                    <label for="call" class="sr-only">Nomor</label>
+                    <input class="form-control" name="call" id="call" placeholder="0356-******">
                   </div>
                   <div class="form-group">
                     <label for="email" class="sr-only">Email</label>
                     <input type="email" name="email" id="email" class="form-control" placeholder="Email">
                   </div>
+                  <div class="form-group">
+                    <label for="motto" class="sr-only">Motto</label>
+                    <input name="motto" id="motto" class="form-control" placeholder="Motto Perusahaan">
+                  </div>
                   <div class="form-group mb-4">
                     <label for="password" class="sr-only">Password</label>
-                    <input type="password" name="password" id="password" class="form-control" placeholder="***********">
+                    <input type="password" name="password" id="password" class="form-control" placeholder="********">
                   </div>
-                  <input class="btn btn-block login-btn mb-4" type="button" value="Daftar Akun">
+                  <input class="btn btn-block login-btn mb-4" type="submit" value="Daftar Akun">
                 </form>
                 <p class="login-card-footer-text">Sudah punya akun? <a href="<?= BASEURL; ?>/Masuk" class="text-reset"><b>Masuk</b></a></p>
             </div>

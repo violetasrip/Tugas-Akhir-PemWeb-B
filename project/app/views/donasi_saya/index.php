@@ -23,10 +23,10 @@
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
                         <li class="nav-item"><a class="nav-link" href="<?= BASEURL; ?>/Beranda">Beranda</a></li>
                         <li class="nav-item"><a class="nav-link" href="<?= BASEURL; ?>/Penerima_donasi">Penerima Donasi</a></li>
-                        <li class="nav-item"><a class="nav-link" href="<?= BASEURL; ?>/Profil">Profil Saya</a></li>
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="<?= BASEURL; ?>/Donasi_saya">Donasi Saya</a></li>
                     </ul>
                     <form class="d-flex">
-                        <div class="text-center"><a class="btn btn-outline-dark mt-auto" aria-current="page" style="background-color:#212529;color: white;" href="<?= BASEURL; ?>/Donasi_saya">Donasi Saya</a></div>
+                        <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="<?= BASEURL; ?>/Profil">Profil Saya</a></div>
                     </form>
                 </div>
             </div>
@@ -70,83 +70,50 @@
         <section class="py-5">
             <div class="container px-4 px-lg-5 mt-5">
                 <div class="row gx-3 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-1 justify-content-center">
-                    <div class="col mb-5">
-                        <div class="card mb-5">
-                            <div class="card-header">
-                                Donasi kepada Annisa Putriana
-                            </div>
-                            <div class="card-body">
-                                <table>
-                                    <tr>
-                                        <td style="width: 150px;">Nama</td>
-                                        <td>:</td>
-                                        <td>Annisa Putriana</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Usia</td>
-                                        <td>:</td>
-                                        <td>14 Tahun</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Jenis Kelamin</td>
-                                        <td>:</td>
-                                        <td>Perempuan</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Kota Asal</td>
-                                        <td>:</td>
-                                        <td>Jakarta Pusat</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Pendidikan Terakhir</td>
-                                        <td>:</td>
-                                        <td>SD</td>
-                                    </tr>
-                                </table>
-                                <br>
-                                <p class="card-text"><b>Donasi diberikan sampai jenjang SMP, dengan nominal per semester adalah Rp.3.600.000</b></p>
-                            </div>
-                        </div>
-                        <div class="card mb-5">
-                            <div class="card-header">
-                                Donasi kepada Annisa Putriana
-                            </div>
-                            <div class="card-body">
-                                <table>
-                                    <tr>
-                                        <td style="width: 150px;">Nama</td>
-                                        <td>:</td>
-                                        <td>Annisa Putriana</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Usia</td>
-                                        <td>:</td>
-                                        <td>14 Tahun</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Jenis Kelamin</td>
-                                        <td>:</td>
-                                        <td>Perempuan</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Kota Asal</td>
-                                        <td>:</td>
-                                        <td>Jakarta Pusat</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Pendidikan Terakhir</td>
-                                        <td>:</td>
-                                        <td>SD</td>
-                                    </tr>
-                                </table>
-                                <br>
-                                <p class="card-text"><b>Donasi diberikan sampai jenjang SMP, dengan nominal per semester adalah Rp.3.600.000</b></p>
-                                <!-- <div class="d-flex">
-                                    <button class="btn btn-sm btn-outline-dark flex-shrink-0" type="button"></button>
-                                </div> -->
+                    <?php foreach($data['penerima_donasi'] as $person): ?>
+                        <div class="col mb-5">
+                            <div class="card mb-5">
+                                <div class="card-header">
+                                    Donasi kepada <?= $person['nama']; ?>
+                                </div>
+                                <div class="card-body">
+                                    <table>
+                                        <tr>
+                                            <td style="width: 150px;">Nama</td>
+                                            <td>:</td>
+                                            <td><?= $person['nama']; ?></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Usia</td>
+                                            <td>:</td>
+                                            <td><?= $person['usia']; ?></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Jenis Kelamin</td>
+                                            <td>:</td>
+                                            <td><?= $person['gender']; ?></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Kota Asal</td>
+                                            <td>:</td>
+                                            <td><?= $person['asal']; ?></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Pendidikan Terakhir</td>
+                                            <td>:</td>
+                                            <td><?= $person['pendidikan']; ?></td>
+                                        </tr>
+                                    </table>
+                                    <br>
+                                    <?php foreach($data['donasi_saya'] as $donasi): ?>
+                                        <?php if($donasi['id_person'] == $person['id_person']) : ?>
+                                            <p class="card-text"><b>Donasi diberikan sampai jenjang <?= $donasi['jenjang']; ?>, dengan nominal per semester adalah Rp.<?= $donasi['nominal']; ?></b></p>
+                                        <?php endif; ?>
+                                    <?php endforeach; ?>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    <?php endforeach; ?>
                 </div>
             </div>
         </section>

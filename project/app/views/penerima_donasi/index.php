@@ -22,11 +22,11 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
                         <li class="nav-item"><a class="nav-link" href="<?= BASEURL; ?>/Beranda">Beranda</a></li>
-                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="<?= BASEURL; ?>/Penerima_Donasi">Penerima Donasi</a></li>
-                        <li class="nav-item"><a class="nav-link" href="<?= BASEURL; ?>/Profil">Profil Saya</a></li>
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="<?= BASEURL; ?>/Penerima_donasi">Penerima Donasi</a></li>
+                        <li class="nav-item"><a class="nav-link" href="<?= BASEURL; ?>/Donasi_saya">Donasi Saya</a></li>
                     </ul>
                     <form class="d-flex">
-                        <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="<?= BASEURL; ?>/Donasi_saya">Donasi Saya</a></div>
+                        <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="<?= BASEURL; ?>/Profil">Profil Saya</a></div>
                     </form>
                 </div>
             </div>
@@ -47,7 +47,7 @@
                     <?php foreach($data['penerima_donasi'] as $person): ?>
                         <div class="col mb-5">
                             <div class="card h-80" style="width: 300px;">
-                                <!-- <img class="card-img-top" src="<?= $person['foto1']; ?>" alt="..." /> -->
+                                <img class="card-img-top" src="<?= BASEURL; ?>/img/<?= $person['foto']; ?>.jpg" alt="..." />
                                 <div class="card-body p-2">
                                     <div class="text-center">
                                         <h5 class="fw-bolder"><?= $person['nama']; ?></h5>

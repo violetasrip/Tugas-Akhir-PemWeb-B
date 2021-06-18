@@ -22,11 +22,11 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
                         <li class="nav-item"><a class="nav-link" href="<?= BASEURL; ?>/Beranda">Beranda</a></li>
-                        <li class="nav-item"><a class="nav-link" href="<?= BASEURL; ?>/Penerima_Donasi">Penerima Donasi</a></li>
-                        <li class="nav-item"><a class="nav-link" href="<?= BASEURL; ?>/Profil">Profil Saya</a></li>
+                        <li class="nav-item"><a class="nav-link" href="<?= BASEURL; ?>/Penerima_donasi">Penerima Donasi</a></li>
+                        <li class="nav-item"><a class="nav-link" href="<?= BASEURL; ?>/Donasi_saya">Donasi Saya</a></li>
                     </ul>
                     <form class="d-flex">
-                        <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="<?= BASEURL; ?>/Donasi_saya">Donasi Saya</a></div>
+                        <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="<?= BASEURL; ?>/Profil">Profil Saya</a></div>
                     </form>
                 </div>
             </div>
@@ -34,7 +34,7 @@
         <section class="py-5">
             <div class="container px-4 px-lg-5 my-5">
                 <div class="row gx-4 gx-lg-5 align-items-center">
-                    <div class="col-md-6"><img class="card-img-top mb-5 mb-md-0" src="<?= BASEURL; ?>/img/annisa.jpg" alt="..." /></div>
+                    <div class="col-md-6"><img class="card-img-top mb-5 mb-md-0" src="<?= BASEURL; ?>/img/detail/<?= $data['penerima_donasi']['foto']; ?>.jpg" alt="..." /></div>
                     <div class="col-md-6">
                         <h1 class="display-5 fw-bolder"><?= $data['penerima_donasi']['nama']; ?></h1>
                         <div class="fs-5 mb-5">
@@ -65,7 +65,7 @@
                         <br>
                         <p><?= $data['penerima_donasi']['bio']; ?></p>
                         <div class="d-flex">
-                            <div class="text-center"><a class="btn btn-outline-dark btn-lg mt-auto" href="<?= BASEURL; ?>/Form_donasi/index/<?= $person['id_person'] ?>">Lakukan Donasi</a></div>
+                            <div class="text-center"><a class="btn btn-outline-dark btn-lg mt-auto" href="<?= BASEURL; ?>/Form_donasi/index/<?= $data['penerima_donasi']['id_person'] ?>">Lakukan Donasi</a></div>
                         </div>
                     </div>
                 </div>

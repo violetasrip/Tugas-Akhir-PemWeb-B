@@ -22,7 +22,7 @@
           <div class="col-md-7">
             <div class="card-body" style="margin-right: 0%;">
               <p class="login-card-description">Make a Change!</p>
-              <form action="<?= BASEURL; ?>/Form_donasi/add_donasi/<?= $id ?>" method="post">
+              <form action="<?= BASEURL; ?>/Form_donasi/add_donasi" method="post">
                   <div>
                     <p lass="login-card-description" >Memfasilitasi sampai jenjang :</p>
                   </div>
@@ -32,6 +32,7 @@
                     <option value="SMP">SMP</option>
                     <option value="SMA">SMA</option>
                   </select>
+                  <input name="id" value="<?= $data['id'] ?>" style="display:none;">
                   <div class="form-group">
                     <label for="nominal" class="sr-only">Nominal per Semester</label>
                     <input class="form-control" name="nominal" id="nominal" placeholder="Masukkan Nominal per Semester">
@@ -40,7 +41,7 @@
                     <label for="password" class="sr-only">Password</label>
                     <input type="password" name="password" id="password" class="form-control" placeholder="********">
                   </div>
-                  <input name="<?= $id ?>" id="donasi" value="<?= $id ?>" class="btn btn-block login-btn mb-4" type="submit">
+                  <input name="donasi" id="donasi" class="btn btn-block login-btn mb-4" type="submit" value="Donasi">
                 </form>
             </div>
           </div>

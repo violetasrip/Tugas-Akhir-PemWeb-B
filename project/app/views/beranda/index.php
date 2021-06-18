@@ -23,10 +23,10 @@
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
                         <li class="nav-item"><a class="nav-link active" aria-current="page" href="<?= BASEURL; ?>/Beranda">Beranda</a></li>
                         <li class="nav-item"><a class="nav-link" href="<?= BASEURL; ?>/Penerima_donasi">Penerima Donasi</a></li>
-                        <li class="nav-item"><a class="nav-link" href="<?= BASEURL; ?>/Profil">Profil Saya</a></li>
+                        <li class="nav-item"><a class="nav-link" href="<?= BASEURL; ?>/Donasi_saya">Donasi Saya</a></li>
                     </ul>
                     <form class="d-flex">
-                        <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="<?= BASEURL; ?>/Donasi_saya">Donasi Saya</a></div>
+                        <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="<?= BASEURL; ?>/Profil">Profil Saya</a></div>
                     </form>
                 </div>
             </div>

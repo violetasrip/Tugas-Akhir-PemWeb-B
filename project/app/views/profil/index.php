@@ -23,10 +23,10 @@
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
                         <li class="nav-item"><a class="nav-link" href="<?= BASEURL; ?>/Beranda">Beranda</a></li>
                         <li class="nav-item"><a class="nav-link" href="<?= BASEURL; ?>/Penerima_donasi">Penerima Donasi</a></li>
-                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="<?= BASEURL; ?>/Profil">Profil Saya</a></li>
+                        <li class="nav-item"><a class="nav-link" href="<?= BASEURL; ?>/Donasi_saya">Donasi Saya</a></li>
                     </ul>
                     <form class="d-flex">
-                        <button class="btn btn-outline-dark" type="submit">Donasi Saya</button>
+                        <div class="text-center"><a class="btn btn-outline-dark mt-auto" aria-current="page" style="background-color:#212529;color:white;" href="<?= BASEURL; ?>/Profil">Profil Saya</a></div>
                     </form>
                 </div>
             </div>
@@ -35,8 +35,8 @@
         <header class="bg-dark py-5">
             <div class="container px-4 px-lg-5 my-5" style="margin-top:-3%;">
                 <div class="text-center text-white">
-                    <h1 class="fw-bolder">Bank Cimb Niaga</h1>
-                    <p class="lead" style="width: 60%; margin-left:19%">Menjadi Bank Universal pilihan dalam memberikan solusi kepada nasabah agar dapat lebih cepat menggapai ambisi, tujuan, dan mimpi dalam setiap jenjang kehidupan</p>
+                    <h1 class="fw-bolder"><?= $data['user']['nama_p']; ?></h1>
+                    <p class="lead" style="width: 60%; margin-left:19%"><?= $data['user']['motto']; ?></p>
                 </div>
             </div>
         </header>
@@ -51,29 +51,28 @@
                         <tr>
                             <td style="width: 200px;">Nama Perusahaan</td>
                             <td>:</td>
-                            <td>Bank Cimb Niaga</td>
+                            <td><?= $data['user']['nama_p']; ?></td>
                         </tr>
                         <tr>
                             <td>Email</td>
                             <td>:</td>
-                            <td>14041@cimbniaga.co.id.</td>
+                            <td><?= $data['user']['email']; ?></td>
                         </tr>
                         <tr>
                             <td>Call Center</td>
                             <td>:</td>
-                            <td>14041</td>
+                            <td><?= $data['user']['telepon']; ?></td>
                         </tr>
                         <tr>
                             <td>Alamat</td>
                             <td>:</td>
-                            <td>Jl. Jend Sudirman Kav. 58 Jakarta 12190, Indonesia</td>
+                            <td><?= $data['user']['alamat_p']; ?></td>
                         </tr>
                     </table>
                     <br>
                     <form action="<?= BASEURL; ?>/Keluar" method="POST">
-                        <input name="logout" id="logout" class="btn btn-outline-dark mt-auto" style="margin-left:40%;" type="submit" value="Keluar">
+                        <input name="logout" id="logout" class="btn btn-outline-dark mt-auto" style="margin-left:45%;" type="submit" value="Keluar">
                     </form>
-                    <!-- <div type="submit" name="logout" id="logout" class="btn btn-outline-dark mt-auto" style="margin-left:40%;">Logout</div> -->
                 </div>
             </div>
         </section>
