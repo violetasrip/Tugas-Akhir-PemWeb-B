@@ -6,4 +6,4 @@ define('BASEURL','http://localhost/project/public');
 define('db_host', 'localhost');
 define('db_usn', 'root');
 define('db_pass', '');
-define('db_name', 'charity');
+define('db_name', 'charityin');

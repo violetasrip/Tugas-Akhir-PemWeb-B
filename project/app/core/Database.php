@@ -5,11 +5,11 @@ class Database{
     private $usn = db_usn;
     private $pass = db_pass;
     private $db_name = db_name;
-    private $dbh
-    private $query
+    private $dbh;
+    private $query;
 
     public function __construct(){
-        $condb = 'mysql:host=' . $this->host . ';dbname='. $this->dbh_name;
+        $condb = 'mysql:host=' . $this->host . ';dbname='. $this->db_name;
         
         $option = [
             PDO::ATTR_PERSISTENT => true,
@@ -37,6 +37,8 @@ class Database{
                     $type = PDO::PARAM_BOOL;
                 case is_null($value):
                     $type = PDO::PARAM_NULL;
+                case is_object($value):
+                    $type = PDO::PARAM_LOB;
                 default:
                     $type = PDO::PARAM_STR;
             }
@@ -51,11 +53,11 @@ class Database{
 
     public function resultSet(){
         $this->execute();
-        return $this->query->fetchAll(PDO::FETCH_ASSOC)
+        return $this->query->fetchAll(PDO::FETCH_ASSOC);
     }
 
     public function single(){
         $this->execute();
-        return $this->query->fetch(PDO::FETCH_ASSOC)
+        return $this->query->fetch(PDO::FETCH_ASSOC);
     }
 }

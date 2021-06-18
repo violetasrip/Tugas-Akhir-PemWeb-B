@@ -23,7 +23,7 @@
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
                         <li class="nav-item"><a class="nav-link" href="<?= BASEURL; ?>/Beranda">Beranda</a></li>
                         <li class="nav-item"><a class="nav-link active" aria-current="page" href="<?= BASEURL; ?>/Penerima_Donasi">Penerima Donasi</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#!">Profil Saya</a></li>
+                        <li class="nav-item"><a class="nav-link" href="<?= BASEURL; ?>/Profil">Profil Saya</a></li>
                     </ul>
                     <form class="d-flex">
                         <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="<?= BASEURL; ?>/Donasi_saya">Donasi Saya</a></div>
@@ -43,133 +43,23 @@
         <!-- Section-->
         <section class="py-5">
             <div class="container px-4 px-lg-5 mt-5">
-                <div class="row gx-3 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-3 justify-content-center">
-                    <div class="col mb-5">
-                        <div class="card h-80" style="width: 300px;">
-                            <img class="card-img-top" src="<?= BASEURL; ?>/img/14.jpg" alt="..." />
-                            <div class="card-body p-2">
-                                <div class="text-center">
-                                    <h5 class="fw-bolder">Annisa Rahma</h5>
-                                    <p style="font-size:12px">Terakhir menempuh pendidikan pada tingkat SD</p> 
+                <div class="row gx-3 gx-lg-5 row-cols-3 row-cols-md-3 row-cols-xl-3 justify-content-center">
+                    <?php foreach($data['penerima_donasi'] as $person): ?>
+                        <div class="col mb-5">
+                            <div class="card h-80" style="width: 300px;">
+                                <!-- <img class="card-img-top" src="<?= $person['foto1']; ?>" alt="..." /> -->
+                                <div class="card-body p-2">
+                                    <div class="text-center">
+                                        <h5 class="fw-bolder"><?= $person['nama']; ?></h5>
+                                        <p style="font-size:12px">Terakhir menempuh pendidikan pada tingkat <?= $person['pendidikan']; ?></p> 
+                                    </div>
+                                </div>
+                                <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                    <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="<?= BASEURL; ?>/Penerima_donasi/detail/<?= $person['id_person'] ?>">Detail Profil</a></div>
                                 </div>
                             </div>
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="<?= BASEURL; ?>/Detail_penerima_donasi">Detail Profil</a></div>
-                            </div>
                         </div>
-                    </div>
-                    <div class="col mb-5">
-                        <div class="card h-80" style="width: 300px;">
-                            <img class="card-img-top" src="<?= BASEURL; ?>/img/laki4.jfif" alt="..." />
-                            <div class="card-body p-2">
-                                <div class="text-center">
-                                    <h5 class="fw-bolder">Aksa Kinandar</h5>
-                                    <p style="font-size:12px">Terakhir menempuh pendidikan pada tingkat SMP</p> 
-                                </div>
-                            </div>
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Detail Profil</a></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col mb-5">
-                        <div class="card h-80" style="width: 300px;">
-                            <img class="card-img-top" src="<?= BASEURL; ?>/img/10.jpg" alt="..." />
-                            <div class="card-body p-2">
-                                <div class="text-center">
-                                    <h5 class="fw-bolder">Anindia Syakila</h5>
-                                    <p style="font-size:12px">Terakhir menempuh pendidikan pada tingkat SD</p> 
-                                </div>
-                            </div>
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Detail Profil</a></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col mb-5">
-                        <div class="card h-80" style="width: 300px;">
-                            <img class="card-img-top" src="<?= BASEURL; ?>/img/anak1.jpeg" alt="..." />
-                            <div class="card-body p-2">
-                                <div class="text-center">
-                                    <h5 class="fw-bolder">Bella Inindira</h5>
-                                    <p style="font-size:12px">Terakhir menempuh pendidikan pada tingkat SMP</p> 
-                                </div>
-                            </div>
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Detail Profil</a></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col mb-5">
-                        <div class="card h-80" style="width: 300px;">
-                            <img class="card-img-top" src="<?= BASEURL; ?>/img/anak4.jpeg" alt="..." />
-                            <div class="card-body p-2">
-                                <div class="text-center">
-                                    <h5 class="fw-bolder">Dendi Sinanggar</h5>
-                                    <p style="font-size:12px">Terakhir menempuh pendidikan pada tingkat SMP</p> 
-                                </div>
-                            </div>
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Detail Profil</a></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col mb-5">
-                        <div class="card h-80" style="width: 300px;">
-                            <img class="card-img-top" src="<?= BASEURL; ?>/img/anak567.jpeg" alt="..." />
-                            <div class="card-body p-2">
-                                <div class="text-center">
-                                    <h5 class="fw-bolder">David Firdaus</h5>
-                                    <p style="font-size:12px">Terakhir menempuh pendidikan pada tingkat SD</p> 
-                                </div>
-                            </div>
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Detail Profil</a></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col mb-5">
-                        <div class="card h-80" style="width: 300px;">
-                            <img class="card-img-top" src="<?= BASEURL; ?>/img/anak34.jpeg" alt="..." />
-                            <div class="card-body p-2">
-                                <div class="text-center">
-                                    <h5 class="fw-bolder">Erna Kinanti</h5>
-                                    <p style="font-size:12px">Terakhir menempuh pendidikan pada tingkat SMP</p> 
-                                </div>
-                            </div>
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Detail Profil</a></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col mb-5">
-                        <div class="card h-80" style="width: 300px;">
-                            <img class="card-img-top" src="<?= BASEURL; ?>/img/anak234.jpeg" alt="..." />
-                            <div class="card-body p-2">
-                                <div class="text-center">
-                                    <h5 class="fw-bolder">Fifi Tarisa</h5>
-                                    <p style="font-size:12px">Terakhir menempuh pendidikan pada tingkat SMP</p> 
-                                </div>
-                            </div>
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Detail Profil</a></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col mb-5">
-                        <div class="card h-80" style="width: 300px;">
-                            <img class="card-img-top" src="<?= BASEURL; ?>/img/anak67.jpeg" alt="..." />
-                            <div class="card-body p-2">
-                                <div class="text-center">
-                                    <h5 class="fw-bolder">Gilang Ramadhan</h5>
-                                    <p style="font-size:12px">Terakhir menempuh pendidikan pada tingkat SMP</p> 
-                                </div>
-                            </div>
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Detail Profil</a></div>
-                            </div>
-                        </div>
-                    </div>
+                    <?php endforeach; ?>
                 </div>
             </div>
         </section>

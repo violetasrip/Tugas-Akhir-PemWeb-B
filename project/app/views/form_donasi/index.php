@@ -22,25 +22,25 @@
           <div class="col-md-7">
             <div class="card-body" style="margin-right: 0%;">
               <p class="login-card-description">Make a Change!</p>
-              <form action="#!">
+              <form action="<?= BASEURL; ?>/Form_donasi/add_donasi/<?= $id ?>" method="post">
                   <div>
                     <p lass="login-card-description" >Memfasilitasi sampai jenjang :</p>
                   </div>
-                  <select class="form-select form-control mb-3" aria-label="Default select example" style="width:325px;">
+                  <select class="form-select form-control mb-3" name="jenjang" id="jenjang" aria-label="Default select example" style="width:325px;">
                     <!-- <option selected>Pilih jenjang</option> -->
-                    <option value="1">SD</option>
-                    <option value="2">SMP</option>
-                    <option value="3">SMA</option>
+                    <option value="SD">SD</option>
+                    <option value="SMP">SMP</option>
+                    <option value="SMA">SMA</option>
                   </select>
                   <div class="form-group">
                     <label for="nominal" class="sr-only">Nominal per Semester</label>
-                    <input class="form-control" placeholder="Masukkan Nominal per Semester">
+                    <input class="form-control" name="nominal" id="nominal" placeholder="Masukkan Nominal per Semester">
                   </div>
                   <div class="form-group mb-4">
                     <label for="password" class="sr-only">Password</label>
-                    <input type="password" name="password" id="password" class="form-control" placeholder="***********">
+                    <input type="password" name="password" id="password" class="form-control" placeholder="********">
                   </div>
-                  <input name="login" id="login" class="btn btn-block login-btn mb-4" type="button" value="Donasi">
+                  <input name="<?= $id ?>" id="donasi" value="<?= $id ?>" class="btn btn-block login-btn mb-4" type="submit">
                 </form>
             </div>
           </div>
